@@ -1,4 +1,17 @@
-    if (elementsArray.length > 1) {
+    for (var el of elementsArray) {
+      if (A.includes(el.element_name)) {
+        var compound = el.element_name;
+        for (var i of elementsArray) {
+          if (B.includes(i.element_name)) {
+            compound += i.element_name;
+            return { name: compound, value: el.barcode_value };
+          }
+        }
+      }
+    }
+
+------------------------------------------------------------------------------------
+if (elementsArray.length > 1) {
       var messageText = document.querySelector("#message-text");
       var length = elementsArray.length;
       var distance = null;
